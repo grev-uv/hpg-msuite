@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>bam2csv.png</file>
+        <file>dmr2.png</file>
+        <file>fastq2bam.png</file>
+        <file>fastq2bam2csv.png</file>
+        <file>icon.png</file>
+        <file>csv2dmr.png</file>
+    </qresource>
+</RCC>

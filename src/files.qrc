@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>find_mapper.txt</file>
+        <file>find_methyl.txt</file>
+    </qresource>
+</RCC>
