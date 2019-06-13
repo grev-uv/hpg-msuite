@@ -72,7 +72,7 @@ where:
 16. Some parameters of mapping process.
 
 
-Once the **HPG-Dhunter** process is launched, the README.md of the git repository can help to work with this tool.
+Once the **HPG-Dhunter** process is launched, the [README.md](https://github.com/grev-uv/hpg-dhunter) of the git repository can help to work with this tool.
 
 For a properly use of **HPG-Msuite**, a previous installation of HPG-Methyl, HPG-Hmapper and HPG-Dhunter is needed in the same computer. Besides, in the line 77 of iface.cpp file, the path to the HPG-Dhunter executable file must be changed.
 
