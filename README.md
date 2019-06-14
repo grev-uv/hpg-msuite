@@ -1,8 +1,8 @@
 # HPG-Msuite
-**HPG-Msuite** is a powerful and friendly tool kit for DNA methylation analysis and DMR detection. HPG-Msuite began with [**HPG-Methyl**](https://github.com/grev-uv/hpg-methyl), an ultrafast and highly sensitive tool for alignment and methylation analysis of Next-Generation Sequencing samples, which works with both single-end or paired-end fastq files and provides .bam files. The next analysis step can be done with [**HPG-Hmapper**](https://github.com/grev-uv/hpg-hmapper), a parallel software tool for analyzing DNA hydroximethylation data, which works with the .bam files yielded by HPG-Methyl and provides a .csv file containing the mathylation map for each chromosome. For each position in the chromosome, this tool yields the number of Cs, noCs, 5mCs and 5hmCs aligned by HPG-Methyl. The last step in the methylation analysis can be carried out with [**HPG-Dhunter**](https://github.com/grev-uv/hpg-dhunter), a powerful, real-time visualizer tool based on CUDA that can analyze the .csv files coming from different DNA samples and detect Differentially Methylated Regions (DMRs) between samples. HPG-Dhunter also has a version to automatically identify all the DMRs in the whole genome without visualization. This [version](https://github.com/grev-uv/hpg-dhunter-batch) works identifying DMRs using all the samples. 
+**HPG-Msuite** is a powerful and friendly tool kit for DNA methylation analysis and DMR detection. The suite contains tools for all the steps of the process:  [**HPG-Methyl**](https://github.com/grev-uv/hpg-methyl), an ultrafast and highly sensitive tool for alignment and methylation analysis of Next-Generation Sequencing samples, which works with both single-end or paired-end .fastq files. It yields the alignment and methylation status of the sample dataset in the form of .bam files. The next analysis step can be done with [**HPG-Hmapper**](https://github.com/grev-uv/hpg-hmapper), a parallel software tool for analyzing DNA hydroximethylation data, which works with the .bam files yielded by HPG-Methyl and provides a .csv file containing the methylation map for each chromosome. For each position in the chromosome, this tool yields the number of Cs, noCs, 5mCs and 5hmCs aligned by HPG-Methyl. The last step in the methylation analysis can be carried out with [**HPG-Dhunter**](https://github.com/grev-uv/hpg-dhunter), a powerful, real-time visualizer tool based on CUDA that can analyze the .csv files coming from different DNA samples and detect Differentially Methylated Regions (DMRs) between samples. HPG-Dhunter also has a version to automatically identify all the DMRs in the whole genome without visualization. This [version](https://github.com/grev-uv/hpg-dhunter-batch) works identifying DMRs using all the samples. 
 
 ## Handling
-**HPG-Msuite** shows a user interface (UI) whose design has been developed according with usability good practices. HPG-Msuite offers a quick access to automate analysis processes from alignment fastq samples to display the DMRs.
+**HPG-Msuite** shows a user interface (UI) whose design has been developed according with usability good practices. HPG-Msuite offers a quick access to automate all  the analysis processes, from alignment of fastq samples to DMR detection and visualization.
 
 This is the main UI:
 
@@ -15,7 +15,7 @@ where:
 4. Launch HPG-Dhunter application.
 
 
-Once the **HPG-Methyl** interface is running, the alignment process of fastq files can be done for all the samples easily. This interface turns the alignment process through the terminal, typing one by one the commands for each sample of the set, into an automated process.
+Once the **HPG-Methyl** interface is running, the alignment process of fastq files can be done for all the samples easily. This interface turns the alignment of several samples into an automated process, instead of repeatedly typing the commands for each of the samples.
 
 This is the main UI:
 
@@ -45,7 +45,7 @@ where:
 21. Select the HPG-Methyl executable file.
 
 
-Once the **HPG-Hmapper** interface is running, the mapping process of bam files can be done for all the samples easily. This interface turns the alignment process through the terminal, typing one by one the commands for each sample of the set, into an automated process.
+In the same way, the **HPG-Hmapper** interface allows to carry out the mapping process of bam files for several samples easily.
 
 This is the main UI:
 
@@ -69,11 +69,9 @@ where:
 15. Button to exit from the interface and return to HPG-Suite interface.
 16. Some parameters of mapping process.
 
+Finally, **HPG-Dhunter** allows the selection of the resuls caming from different samples and the detection of DMRs in the selected chromosomes. The [README.md](https://github.com/grev-uv/hpg-dhunter) of the git repository can help to work with this tool once it is launched.
 
-Once the **HPG-Dhunter** process is launched, the [README.md](https://github.com/grev-uv/hpg-dhunter) of the git repository can help to work with this tool.
-
-For a properly use of **HPG-Msuite**, a previous installation of HPG-Methyl, HPG-Hmapper and HPG-Dhunter is needed in the same computer. Besides, in the line 77 of iface.cpp file, the path to the HPG-Dhunter executable file must be changed.
-
+For a correct working of **HPG-Msuite**, a previous installation of HPG-Methyl, HPG-Hmapper and HPG-Dhunter is needed in the same computer. Also, the path to the HPG-Dhunter executable file must be changed in the line 77 of iface.cpp file.
 
 
 
