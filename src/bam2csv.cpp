@@ -60,7 +60,7 @@ Bam2csv::Bam2csv(QWidget *parent) :
         QList<int> enable_iface = {1,1,1,1,1,
                                    1,0,0,0,0,0,
                                    1,1,1,1,
-                                   1,1,1,1,1,1,1,1,1,1,1,1,
+                                   1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
                                    1,0,0};
         widgets_enabling(enable_iface);
     }
@@ -69,7 +69,7 @@ Bam2csv::Bam2csv(QWidget *parent) :
         QList<int> enable_iface = {0,0,0,0,0,
                                    0,0,0,0,0,0,
                                    0,0,0,0,
-                                   0,0,0,0,0,0,0,0,0,0,0,0,
+                                   0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
                                    0,0,0};
         widgets_enabling(enable_iface);
     }
@@ -144,9 +144,12 @@ void Bam2csv::widgets_enabling(QList<int> enable)
     ui->label_mc_quality->setEnabled(enable.at(24));
     ui->hmc_quality_slider->setEnabled(enable.at(25));
     ui->hmc_quality_label->setEnabled(enable.at(26));
-    ui->progressBar->setEnabled(enable.at(27));
-    ui->start->setEnabled(enable.at(28));
-    ui->stop->setEnabled(enable.at(29));
+    ui->label_coverage->setEnabled(enable.at(27));
+    ui->min_coverage->setEnabled(enable.at(28));
+    ui->coverage_label->setEnabled(enable.at(29));
+    ui->progressBar->setEnabled(enable.at(30));
+    ui->start->setEnabled(enable.at(31));
+    ui->stop->setEnabled(enable.at(32));
 }
 
 
@@ -600,7 +603,7 @@ void Bam2csv::on_ejecutable_clicked()
                                      "An error occurred opening the file: find_mapper.txt"
                                      "\nPlease, check the file for corrupted"
                                     );
-                qDebug() << "ERROR opening file find_methyl.txt";
+                qDebug() << "ERROR opening file find_mapper.txt";
                 return;
             }
             else
@@ -628,7 +631,7 @@ void Bam2csv::on_ejecutable_clicked()
         QList<int> enable_iface = {1,1,1,1,1,
                                    1,0,0,0,0,0,
                                    1,1,1,1,
-                                   1,1,1,1,1,1,1,1,1,1,1,1,
+                                   1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
                                    1,0,0};
         widgets_enabling(enable_iface);
     }
@@ -637,7 +640,7 @@ void Bam2csv::on_ejecutable_clicked()
         QList<int> enable_iface = {0,0,0,0,0,
                                    0,0,0,0,0,0,
                                    0,0,0,0,
-                                   0,0,0,0,0,0,0,0,0,0,0,0,
+                                   0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
                                    0,0,0};
         widgets_enabling(enable_iface);
     }
@@ -773,7 +776,8 @@ void Bam2csv::bam_2_csv()
                       QString::number(memory_available) <<
                       QString::number(ui->ram_slider->value()) <<
                       QString::number(ui->hmc_batch_size_slider->value()) <<
-                      QString::number(ui->hmc_quality_slider->value());
+                      QString::number(ui->hmc_quality_slider->value()) <<
+                      QString::number(ui->min_coverage->value());
 
         // barra de progreso inicializada a cero;
         ui->progressBar->setMaximum(list_1.size());

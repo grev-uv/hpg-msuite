@@ -24,6 +24,7 @@ void HPGHmapper_worker::solicitud_mapeado(QString mapper_path,
     //  2   ram_%
     //  3   batch_size
     //  4   min_quality
+    //  5   min_coverage
     argumentos  = parametros;
 
     path2csv    = csv_path;
@@ -69,7 +70,8 @@ void HPGHmapper_worker::lectura()
                     "--memory" << QString::number(int(argumentos[1].toDouble() * argumentos[2].toDouble() * 0.01)) + ".0G" <<
                     "--output-format" << "csv" <<
                     "--batch-size" << argumentos[3] <<
-                    "--quality" << argumentos[4];
+                    "--quality" << argumentos[4] <<
+                    "--coverage" << argumentos[5];
 
             if (!path2bwt.isEmpty())
                 args << "--bwt-index" << path2bwt;
