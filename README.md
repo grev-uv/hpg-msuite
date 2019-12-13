@@ -52,7 +52,7 @@ In the same way, the **HPG-Hmapper** interface allows to carry out the mapping p
 
 This is the main UI:
 
-![](images/iface-hpgHmapper.png)
+![](images/iface-hpgHmapper_2.png)
 
 where:
 1. Select the HPG-Hmapper executable file.
